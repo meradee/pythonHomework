@@ -48,3 +48,18 @@ with open(csvpath, newline='') as csvfile:
     outfile.write("\nAverage Change $" + str(averageChange))
 
 # Calculate greatest increase and greatest decrease in revenue
+
+    profitChange = 0
+    lossChange = 0
+    for i in range(totalMonths-1):
+      if changeList[i] > profitChange:
+        profitChange = changeList[i]
+      elif changeList[i] < lossChange:
+        lossChange = changeList[i]
+    
+
+    profit = changeList.index(profitChange) + 1
+    loss = changeList.index(lossChange) + 1
+
+    print(f"Greatest Increase in Revenue: {dateList[profit]} (${revenueList[profit]}")
+    print(f"Greatest Decrease in Revenue: {dateList[loss]} (${revenueList[loss]}")
