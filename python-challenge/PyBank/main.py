@@ -29,6 +29,7 @@ for revenue in revenueList:
   sumRevenue += int(revenue)
 
 print("Total: $" + str(sumRevenue))
+outfile.write("\nTotal: $" + str(sumRevenue))
 
 # Calculate average change
 changeList = []
