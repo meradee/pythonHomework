@@ -8,7 +8,7 @@ with open(csvpath, newline='') as csvfile:
   PyBank = csv.reader(csvfile, delimiter=',')
   csv_header = next(PyBank)
 
-  with open("Output.txt", "w") as outfile:
+  with open("file.txt", "w") as outfile:
 
     dateList = []
     revenueList = []
@@ -45,5 +45,6 @@ for i in range(totalMonths-1):
 	averageChange = changeSum/(totalMonths-1)
 
 	print("Average Change: $" + str(averageChange))
+  outfile.write("\nAverage Change $" + str(averageChange))
 
 # Calculate greatest increase and greatest decrease in revenue
