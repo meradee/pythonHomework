@@ -22,8 +22,8 @@ with open(csvpath, newline='') as csvfile:
     print("Election Results")
     print("Total Votes: " + str(totalVotes))
 
-    outfile.write("Election Results")
-    outfile.write("Total Votes: " + str(totalVotes))
+    outfile.write("\nElection Results")
+    outfile.write("\nTotal Votes: " + str(totalVotes))
 
 #Candidate name count 
     votesTally = {candidate:votesList.count(candidate) for candidate in candidateList}
@@ -35,9 +35,9 @@ with open(csvpath, newline='') as csvfile:
         for k,v in votesTally.items():
           if k==candidate:
             print("".join("{}: {:5.2f}% ({})".format(k,x,v)))
-            outfile.write("".join("{}: {:5.2f}% ({})\n".format(k,x,v)))
+            outfile.write("".join("\n{}: {:5.2f}% ({})".format(k,x,v)))
 
 #Print votes in format
     print("".join("Winner:{}".format(candidate) for candidate, votesCount in votesTally.items() if votesList == max (votesTally.values())))
 
-    outfile.write("".join("Winner:{}".format(candidate) for candidate, votesCount in votesTally.items() if votesCount == max(votesTally.values())))
+    outfile.write("".join("\nWinner:{}".format(candidate) for candidate, votesCount in votesTally.items() if votesCount == max(votesTally.values())))
