@@ -64,5 +64,4 @@ with open(csvpath, newline='') as csvfile:
     print(f"Greatest Increase in Profits: {dateList[profit]} (${revenueList[profit]}")
     print(f"Greatest Decrease in Profits: {dateList[loss]} (${revenueList[loss]}")
     outfile.write(f"\nGreatest Increase in Profits: {dateList[profit]} (${revenueList[profit]})")
-    outfile.write(
-        f"\nGreatest Decrease in Profits: {dateList[loss]} (${revenueList[loss]})")
+    outfile.write(f"\nGreatest Decrease in Profits: {dateList[loss]} (${revenueList[loss]})")
